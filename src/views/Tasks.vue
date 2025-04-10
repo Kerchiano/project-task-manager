@@ -1,6 +1,7 @@
 <template>
   <div class="tasks">
     <div class="header">
+      <router-link to="/" class="back-arrow">← Назад</router-link>
       <h1>Tasks</h1>
       <button @click="showModal = true" class="add-task header-desk">
         Add Task
@@ -160,9 +161,10 @@
 
           <label class="form__label">Assignee</label>
           <select v-model="editableTask.assignee" class="form__input" required>
-            <option disabled :value="editableTask.status">
+            <option disabled value="editableTask.status">
               Select assignee
             </option>
+            <option disabled value="">Select status</option>
             <option
               v-for="(user, index) in uniqueAssignees"
               :key="index"
@@ -219,6 +221,9 @@ import { useRoute } from "vue-router";
 import Draggable from "vuedraggable";
 import { useTasksStore } from "@/stores/tasksStore";
 import { useProjectsStore } from "@/stores/projectsStore";
+import { useToast } from "vue-toastification";
+
+const toast = useToast();
 const route = useRoute();
 const rawProjectId = route.params.id;
 const projectId = Array.isArray(rawProjectId)
@@ -326,6 +331,7 @@ const handleStatusDrop = async (task: Task) => {
   });
 
   await loadTasks();
+  toast.success("Статус завдання успішно оновлено!");
   draggedStatus.value = null;
 };
 
@@ -386,6 +392,7 @@ const createTask = async () => {
 
     showModal.value = false;
     await loadTasks();
+    toast.success("Завдання успішно створено!");
 
     newTask.value = {
       title: "",
@@ -433,6 +440,7 @@ const updateTask = async () => {
       .getTasksByProjectId(editableTask.value.projectId)
       .sort((a, b) => a.order - b.order);
     showEditModal.value = false;
+    toast.success("Завдання успішно оновлено");
   } catch (err) {
     console.error("Ошибка при обновлении задачи:", err);
   }

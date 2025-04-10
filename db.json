@@ -4,7 +4,7 @@
       "id": "1",
       "name": "Project A",
       "description": "This is Project A",
-      "tasks": 9,
+      "tasks": 10,
       "status": "Active",
       "created": "2024-04-01",
       "dueDate": "2024-05-01"
@@ -52,6 +52,14 @@
       "tasks": 2,
       "status": "Active",
       "created": "2025-04-09"
+    },
+    {
+      "id": 1744288928258,
+      "name": "TestP",
+      "description": "",
+      "tasks": 0,
+      "status": "Active",
+      "created": "2025-04-10"
     }
   ],
   "tasks": [
@@ -104,7 +112,7 @@
       "id": 6,
       "title": "test",
       "assignee": "David",
-      "status": "To Do",
+      "status": "In Progress",
       "dueDate": "2025-04-18",
       "projectId": 1,
       "order": 15
@@ -113,7 +121,7 @@
       "id": 7,
       "title": "werewre",
       "assignee": "Alice",
-      "status": "Done",
+      "status": "To do",
       "dueDate": "2025-04-19",
       "projectId": 1,
       "order": 42
@@ -131,16 +139,16 @@
       "id": 9,
       "title": "Trek",
       "assignee": "Charlie",
-      "status": "To Do",
+      "status": "In Progress",
       "dueDate": "2025-04-25",
       "projectId": 1,
       "order": 12
     },
     {
-      "title": "testos",
+      "title": "testosito",
       "assignee": "Bob",
       "status": "To Do",
-      "dueDate": "2025-04-19",
+      "dueDate": "2025-04-24",
       "projectId": 1,
       "order": 31,
       "id": 10
@@ -148,11 +156,20 @@
     {
       "title": "Checl",
       "assignee": "Bob",
-      "status": "In Progress",
+      "status": "To Do",
       "dueDate": "2025-04-24",
       "projectId": 1,
       "order": 2,
       "id": 11
+    },
+    {
+      "title": "NewTask",
+      "assignee": "Charlie",
+      "status": "In progress",
+      "dueDate": "2025-04-24",
+      "projectId": 1,
+      "order": 1744289082746,
+      "id": 12
     }
   ]
 }

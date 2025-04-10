@@ -27,6 +27,7 @@
 import { ref } from "vue";
 import axios from "axios";
 import { useProjectsStore } from "@/stores/projectsStore";
+import { useToast } from 'vue-toastification';
 
 interface Project {
   id: number;
@@ -49,7 +50,7 @@ const emit = defineEmits<{
   (e: "update:showModal", value: boolean): void;
   (e: "update:projects", projects: Project[]): void;
 }>();
-
+const toast = useToast();
 const projectsStore = useProjectsStore();
 
 const newProject = ref({
@@ -75,8 +76,8 @@ const createProject = async () => {
   emit("update:projects", [...props.projects, newEntry]);
 
   emit("update:showModal", false);
-  projectsStore.addProject(newEntry)
-
+  projectsStore.addProject(newEntry);
+  toast.success("Проект успішно додано!");
   newProject.value = { name: "", description: "" };
 };
 
@@ -87,5 +88,5 @@ const cancel = () => {
 </script>
 
 <style scoped lang="scss">
-@use '../assets/styles/projectModal.scss' as *;
+@use "../assets/styles/projectModal.scss" as *;
 </style>
