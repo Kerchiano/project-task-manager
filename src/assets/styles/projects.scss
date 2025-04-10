@@ -1,0 +1,88 @@
+.projects {
+  padding: 20px 40px 80px 40px;
+  background-color: white;
+  border-radius: 8px;
+
+  .header,
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &.footer-mob {
+      display: none;
+
+      @media (max-width: 478px) {
+        display: flex;
+      }
+    }
+    @media (max-width: 478px) {
+      justify-content: center;
+    }
+
+    .header-desk {
+      display: block;
+
+      @media (max-width: 478px) {
+        display: none;
+      }
+    }
+
+    h1 {
+      font-size: 2em;
+    }
+
+    .create-project {
+      padding: 16px 16px;
+      border-radius: 8px;
+      font-size: 18px;
+      color: #41464b;
+      background-color: #f2f2f2;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: none;
+      outline: none;
+    }
+
+    .create-project:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      background-color: #000;
+      color: #fff;
+    }
+
+    .create-project:active {
+      transform: translateY(0);
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    button {
+      padding: 8px 12px;
+      font-weight: bold;
+      background: #eee;
+      border: none;
+      cursor: pointer;
+    }
+  }
+
+  .controls {
+    margin: 15px 0;
+    display: flex;
+    gap: 10px;
+  }
+
+  input {
+    padding: 8px 12px;
+    font-size: 16px;
+    outline: none;
+    border-radius: 8px;
+    border: 1px solid #767676;
+  }
+
+  select {
+    padding: 8px 12px;
+    font-size: 16px;
+    outline: none;
+    border-radius: 8px;
+  }
+}
