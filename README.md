@@ -16,13 +16,26 @@ git clone https://github.com/Kerchiano/project-task-manager.git
 2. Запуск проєкту
 У корені проєкту відкрий два термінали:
 
-У першому: запуск бекенду
+У першому терміналі: запуск бекенду
+Перейди до папки проекту project-task-manager
 
+```bash
+cd project-task-manager
+```
+Потім зроби команду щоб інсталювати залежності:
+```bash
+yarn install
+```
+Запусти команду
 ```bash
 yarn server
 ```
-У другому: запуск фронтенду
+Також відкрий другий терминал аналогічно перейди до папки проекту project-task-manager : запуск фронтенду
 
+```bash
+cd project-task-manager
+```
+Запусти команду
 ```bash
 yarn dev
 ```
