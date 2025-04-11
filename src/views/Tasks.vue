@@ -12,7 +12,7 @@
         <div>
           <input
             v-model="search"
-            placeholder="Search by name..."
+            placeholder="Search by assignee..."
             style="margin-right: 10px"
           />
           <select v-model="filterStatus">
@@ -126,7 +126,7 @@
           <select v-model="newTask.status" class="form__input" required>
             <option disabled value="">Select status</option>
             <option value="To do">To do</option>
-            <option value="In progress">In progress</option>
+            <option value="In Progress">In Progress</option>
             <option value="Done">Done</option>
           </select>
 
